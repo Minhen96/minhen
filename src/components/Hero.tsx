@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
+import { Github, Instagram, Mail, ChevronDown } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 export default function Hero() {
@@ -37,12 +37,12 @@ export default function Hero() {
               <Github className="text-gray-900 dark:text-white" size={24} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.instagram.com/minhen_96?igsh=ODNveW1yZnVka2Y%3D&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all dark:hover:shadow-blue-500/20"
             >
-              <Linkedin className="text-blue-600 dark:text-blue-400" size={24} />
+              <Instagram className="text-pink-600 dark:text-pink-400" size={24} />
             </a>
             <a
               href="mailto:evanyap96@gmail.com"

@@ -4,9 +4,9 @@
 export const PERSONAL_INFO = {
   name: "Your Name",
   title: "Full Stack Developer",
-  email: "your.email@example.com",
-  phone: "+1 (555) 123-4567",
-  location: "City, Country",
+  email: "evanyap96@gmail.com",
+  phone: "+60 (10) 232-2096",
+  location: "Kuala Lumpur, Malaysia",
   bio: "Passionate developer with experience in building modern web applications. I love creating elegant solutions to complex problems.",
   resumeUrl: "/path-to-your-resume.pdf",
 };
