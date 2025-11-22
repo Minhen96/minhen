@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { PERSONAL_INFO } from '../constants/portfolio';
+import { motion } from 'framer-motion';
 
 interface IntroScreenProps {
   onComplete: () => void;
@@ -28,15 +29,18 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
     // Staggered animation sequence - NO AUTO-SKIP
     const logoTimer = setTimeout(() => {
       setShowLogo(true);
-      setShowAccentLines(true); // Show accent lines with logo
+    }, 600);
+    const accentLineTimer = setTimeout(() => {
+      setShowAccentLines(true); 
     }, 800);
     const nameTimer = setTimeout(() => setShowName(true), 1200);
     const roleTimer = setTimeout(() => setShowRole(true), 1200);
-    const accentsTimer = setTimeout(() => setShowAccents(true), 2500);
-    const clickHintTimer = setTimeout(() => setShowClickHint(true), 3000);
+    const accentsTimer = setTimeout(() => setShowAccents(true), 0);
+    const clickHintTimer = setTimeout(() => setShowClickHint(true), 3500);
 
     return () => {
       clearTimeout(logoTimer);
+      clearTimeout(accentLineTimer);
       clearTimeout(nameTimer);
       clearTimeout(roleTimer);
       clearTimeout(accentsTimer);
@@ -186,13 +190,22 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
           )}
 
           {/* Skip hint */}
-          {showClickHint && (
-            <div className="pt-8 animate-fade-in">
-              <p className="text-xs md:text-sm text-gray-500 font-mono">
-                Click anywhere to continue...
-              </p>
-            </div>
-          )}
+          <div className="pt-8">
+            <motion.p
+              className="text-xs md:text-sm text-gray-500 font-mono"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: showClickHint ? [0.6, 1, 0.6] : 0,
+                scale: showClickHint ? [0.98, 1.02, 0.98] : 1
+              }}
+              transition={{
+                opacity: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+                scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+              }}
+            >
+              Click anywhere to continue...
+            </motion.p>
+          </div>
         </div>
       </div>
 

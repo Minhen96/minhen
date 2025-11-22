@@ -12,9 +12,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem('theme-mode');
       if (stored) return stored === 'dark';
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      // Default to dark theme instead of system preference
+      return true;
     }
-    return false;
+    return true;
   });
 
   useEffect(() => {
