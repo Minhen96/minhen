@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const INTRO_COMPLETE_KEY = 'portfolio_intro_completed';
 

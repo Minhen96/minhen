@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import Timeline from './components/Timeline';
 import Contact from './components/Contact';
 import Navigation from './components/Navigation';
 import IntroScreen from './components/IntroScreen';
@@ -16,6 +17,7 @@ function PortfolioContent({ onRestartIntro }: { onRestartIntro: () => void }) {
       <Navigation onRestartIntro={onRestartIntro} />
       <Hero />
       <About />
+      <Timeline />
       <Skills />
       <Projects />
       <Contact />
@@ -41,17 +43,17 @@ function App() {
   };
 
   const handleRestartIntro = () => {
-    console.log('🔄 Restart button clicked - going back to intro');
-    console.log('Current showPortfolio:', showPortfolio);
-    console.log('Current introKey:', introKey);
-    resetIntro(); // Reset the intro completed state
+    // Reset the intro completed state
+    resetIntro();
+
     setShowPortfolio(false);
+
+    // Force remount of IntroScreen by changing key
     setIntroKey(prev => {
-      console.log('New introKey will be:', prev + 1);
       return prev + 1;
-    }); // Force remount of IntroScreen
+    }); 
+    
     setTimeout(() => {
-      console.log('After 100ms - showPortfolio should be false:', showPortfolio);
     }, 100);
   };
 
@@ -59,9 +61,11 @@ function App() {
 
   return (
     <ThemeProvider>
-      {!showPortfolio ? (
+      {!showPortfolio 
+      ? (
         <IntroScreen key={introKey} onComplete={handleIntroComplete} />
-      ) : (
+      ) 
+      : (
         <PortfolioContent onRestartIntro={handleRestartIntro} />
       )}
     </ThemeProvider>

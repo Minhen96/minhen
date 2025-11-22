@@ -21,15 +21,18 @@ export default function Navigation({ onRestartIntro }: NavigationProps) {
     <nav className="fixed top-0 w-full bg-white/80 dark:bg-black/80 backdrop-blur-xl z-50 border-b border-gray-200/50 dark:border-portfolio-navy/20 transition-colors duration-300 shadow-sm dark:shadow-portfolio-navy/5">
       <div className="max-w-7xl mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
-          {/* Logo - Luxurious */}
+          {/* Logo - Image based on theme */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="flex items-center space-x-2 group"
+            className="flex items-center group"
           >
-            <span className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">
-              <span className="text-portfolio-navy">&lt;</span>
-              MH
-              <span className="text-portfolio-royal-blue">/&gt;</span>
+            <img
+              src={isDark ? "/light_logo/MH_Logo_transparent_light.png" : "/dark_logo/MH_Logo_transparent.png"}
+              alt="MH Logo"
+              className="h-10 w-auto transition-transform group-hover:scale-105"
+            />
+            <span className="ml-5 text-xl font-semibold text-gray-800 dark:text-gray-200">
+              Portfolio
             </span>
           </button>
 

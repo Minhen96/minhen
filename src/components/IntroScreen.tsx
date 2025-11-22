@@ -140,7 +140,7 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
             </div>
           </div>
 
-          {/* Name - Large Gradient Hero */}
+          {/* Name - More subtle colors and smaller size */}
           <div
             className={`transition-all duration-1000 delay-300 ${
               showName
@@ -148,21 +148,22 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
                 : 'opacity-0 translate-y-8 blur-sm'
             }`}
           >
-            <h1
-              className="text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tight"
-              style={{
-                background: 'linear-gradient(135deg, #1E40AF 0%, #2563EB 25%, #3B82F6 50%, #60A5FA 75%, #93C5FD 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                textShadow: '0 0 80px rgba(37, 99, 235, 0.5)',
-              }}
-            >
-              {PERSONAL_INFO.name}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+              <span className="text-white/90">I'm </span>
+              <span
+                style={{
+                  background: 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 50%, #93C5FD 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                Yap Min Hen
+              </span>
             </h1>
           </div>
 
-          {/* Role/Title - Clean White */}
+          {/* Role/Title - Simple white text */}
           <div
             className={`transition-all duration-1000 delay-200 ${
               showRole
@@ -170,7 +171,7 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
                 : 'opacity-0 translate-y-4'
             }`}
           >
-            <p className="text-2xl md:text-3xl lg:text-4xl font-light text-white/90 tracking-wide">
+            <p className="text-xl md:text-2xl lg:text-3xl font-light text-white/70 tracking-wide">
               {PERSONAL_INFO.title}
             </p>
           </div>

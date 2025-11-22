@@ -50,20 +50,24 @@ export default function Hero() {
         />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-20 text-center relative z-10">
-        <div className="space-y-8">
-          {/* Cool Logo - floating & glowing */}
+      <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
+        {/* Two Column Layout: Text on Left, Image on Right */}
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+
+          {/* Left Column - Content */}
+          <div className="space-y-6 md:space-y-8 text-center md:text-left order-2 md:order-1">
+          {/* Name - with cool floating & glowing motion effects */}
           <motion.div
-            className="inline-flex items-center justify-center mb-4"
+            className="inline-block"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <motion.div
-              className="relative"
+              className="relative inline-block"
               animate={{
                 y: [0, -10, 0],
-                rotate: [0, 5, 0, -5, 0]
+                rotate: [0, 2, 0, -2, 0]
               }}
               transition={{
                 duration: 6,
@@ -71,8 +75,9 @@ export default function Hero() {
                 ease: "easeInOut"
               }}
             >
+              {/* Glowing effect behind the name */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-portfolio-navy/30 to-portfolio-royal-blue/30 rounded-full blur-2xl"
+                className="absolute inset-0 bg-gradient-to-r from-portfolio-navy/30 to-portfolio-royal-blue/30 rounded-lg blur-2xl"
                 animate={{
                   scale: [1, 1.2, 1],
                   opacity: [0.5, 0.8, 0.5]
@@ -83,44 +88,31 @@ export default function Hero() {
                   ease: "easeInOut"
                 }}
               />
-              <div className="relative text-6xl font-bold">
+
+              {/* The name with letter animations */}
+              <motion.h1
+                className={`relative text-6xl md:text-8xl font-bold leading-none tracking-tight mb-4 ${isDark ? 'text-white' : 'text-black'}`}
+              >
                 <motion.span
-                  className="text-portfolio-navy"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2, duration: 0.5 }}
+                  className="inline-block"
+                  initial={{ opacity: 0, x: -50, rotate: -10 }}
+                  animate={{ opacity: 1, x: 0, rotate: 0 }}
+                  transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
                 >
-                  &lt;
+                  Min
                 </motion.span>
+                {" "}
                 <motion.span
-                  className={isDark ? 'text-white' : 'text-black'}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.4, duration: 0.5 }}
+                  className="inline-block"
+                  initial={{ opacity: 0, x: 50, rotate: 10 }}
+                  animate={{ opacity: 1, x: 0, rotate: 0 }}
+                  transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
                 >
-                  /
+                  Hen
                 </motion.span>
-                <motion.span
-                  className="text-portfolio-royal-blue"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.6, duration: 0.5 }}
-                >
-                  &gt;
-                </motion.span>
-              </div>
+              </motion.h1>
             </motion.div>
           </motion.div>
-
-          {/* Name - with reveal animation */}
-          <motion.h1
-            className={`text-6xl md:text-8xl font-bold leading-none tracking-tight mb-4 ${isDark ? 'text-white' : 'text-black'}`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.6, ease: "easeOut" }}
-          >
-            Min Hen
-          </motion.h1>
 
           <motion.p
             className={`text-2xl md:text-3xl font-light tracking-wide ${isDark ? 'text-gray-400' : 'text-gray-600'}`}
@@ -128,7 +120,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.6 }}
           >
-            Full Stack Developer & Software Engineer
+            Software Engineer & Full Stack Developer
           </motion.p>
 
           {/* Accent divider - animated */}
@@ -169,7 +161,7 @@ export default function Hero() {
           </motion.div>
 
           <p className={`text-base md:text-lg max-w-2xl mx-auto font-light ${isDark ? 'text-gray-500' : 'text-gray-600'}`}>
-            I build innovative solutions across web and mobile platforms, specializing in creating robust applications that solve real-world problems.
+            I'm a Software Engineering graduate from TAR UMT with a passion for building full-stack applications across web and mobile platforms.
           </p>
 
           {/* Social Links - Minimalist Style */}
@@ -231,6 +223,42 @@ export default function Hero() {
               }}
             />
           </motion.button>
+          </div>
+
+          {/* Right Column - Profile Image */}
+          <motion.div
+            className="flex justify-center md:justify-end order-1 md:order-2"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className="relative">
+              {/* Glowing effect */}
+              <motion.div
+                className="absolute inset-0 rounded-2xl bg-gradient-to-br from-portfolio-navy to-portfolio-royal-blue blur-2xl opacity-30"
+                animate={{
+                  scale: [1, 1.05, 1],
+                  opacity: [0.3, 0.5, 0.3]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              {/* Profile image with modern card design - smaller on mobile */}
+              <div className="relative">
+                <img
+                  src="/profile.jpg"
+                  alt="Min Hen Yap"
+                  className="relative w-48 h-48 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl object-cover border-2 border-white/10 shadow-2xl"
+                />
+                {/* Subtle overlay gradient */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 to-transparent" />
+              </div>
+            </div>
+          </motion.div>
+
         </div>
 
         <button

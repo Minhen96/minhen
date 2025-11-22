@@ -20,7 +20,7 @@ export const PERSONAL_INFO = {
   email: "evanyap96@gmail.com",
   phone: "+60 (10) 232-2096",
   location: "Kuala Lumpur, Malaysia",
-  bio: "Passionate developer with experience in building modern web applications. I love creating elegant solutions to complex problems.",
+  bio: "Passionate developer with experience in building modern solutions. I love creating elegant solutions to complex problems.",
   resumeUrl: "/path-to-your-resume.pdf",
 };
 
@@ -78,26 +78,37 @@ export const PROJECTS = [
 export const EXPERIENCE = [
   {
     id: 1,
-    company: "Tech Company Inc.",
-    position: "Senior Frontend Developer",
-    duration: "Jan 2022 - Present",
-    location: "Remote",
+    company: "Greenstem Business Software Sdn Bhd",
+    position: "Internship",
+    duration: "NOV 2024 - MAY 2025",
+    startDate: "2024-11",
+    endDate: "2025-05",
+    location: "Kuala Lumpur, Malaysia",
+    link: "https://www.greenstem.com.my/",
+    logo: "/timeline/gs_square_transparent.png",
+    type: "work",
     description: [
-      "Led development of customer-facing web applications serving 100K+ users",
-      "Implemented CI/CD pipelines reducing deployment time by 60%",
-      "Mentored junior developers and conducted code reviews",
+      "Flutter to develop workshop and company internal mobile app.",
+      "React and .NET Core (C#) to develop internal web application.",
     ],
   },
   {
     id: 2,
-    company: "Startup XYZ",
-    position: "Full Stack Developer",
-    duration: "Jun 2020 - Dec 2021",
-    location: "City, Country",
+    company: "Ant International",
+    position: "Java Engineer Fresh Grad",
+    duration: "MAY 2025 - Present",
+    startDate: "2025-05",
+    endDate: null, // null means current/present
+    location: "Kuala Lumpur, Malaysia",
+    link: "https://www.ant-intl.com/en/",
+    logo: "/timeline/ant_square_transparent.png",
+    type: "work",
     description: [
-      "Built RESTful APIs and microservices using Node.js and Express",
-      "Developed responsive UI components with React and TypeScript",
-      "Collaborated with cross-functional teams in Agile environment",
+      "Learn business logic and payment processing.",
+      "Maintain backend services using Spring Boot.",
+      "Deal with offline table and billing config.",
+      "Monitor performance and troubleshoot issues.",
+      "Support Double 11 promotion event stress testing and monitoring.",
     ],
   },
   // Add more experience as needed
@@ -106,11 +117,29 @@ export const EXPERIENCE = [
 export const EDUCATION = [
   {
     id: 1,
-    institution: "University Name",
-    degree: "Bachelor of Science in Computer Science",
+    institution: "Chong Hwa Independent High School",
+    degree: "Secondary Education",
     duration: "2016 - 2020",
-    location: "City, Country",
-    achievements: ["GPA: 3.8/4.0", "Dean's List", "Relevant coursework: Data Structures, Algorithms, Web Development"],
+    startDate: "2016-01",
+    endDate: "2020-12",
+    location: "Kuala Lumpur, Malaysia",
+    type: "education",
+    link: "https://www.chonghwakl.edu.my/",
+    logo: "/timeline/chkl_square_transparent.png",
+    achievements: ["SPM: 10A"],
+  },
+  {
+    id: 2,
+    institution: "Tunku Abdul Rahman University of Management and Technology",
+    degree: "Bachelor of Science in Software Engineering",
+    duration: "2022 - 2025",
+    startDate: "2022-01",
+    endDate: "2025-12",
+    location: "Kuala Lumpur, Malaysia",
+    type: "education",
+    link: "https://www.tarc.edu.my/",
+    logo: "/timeline/tarumt_square_transparent.png",
+    achievements: ["CGPA: 3.82/4.0", "Dean's List"],
   },
   // Add more education as needed
 ];
@@ -150,25 +179,3 @@ export const TESTIMONIALS = [
   },
   // Add more testimonials as needed
 ];
-
-// Theme and UI Constants
-export const THEME = {
-  primaryColor: "#3B82F6", // Tailwind blue-500
-  secondaryColor: "#8B5CF6", // Tailwind purple-500
-  accentColor: "#10B981", // Tailwind green-500
-};
-
-// SEO Meta Data
-export const SEO = {
-  title: "Your Name - Portfolio",
-  description: "Full Stack Developer specializing in modern web applications. View my projects and experience.",
-  keywords: ["web developer", "full stack", "react", "node.js", "portfolio"],
-  ogImage: "/og-image.png",
-};
-
-// Contact Form Configuration
-export const CONTACT_CONFIG = {
-  emailServiceId: "your_emailjs_service_id",
-  emailTemplateId: "your_emailjs_template_id",
-  emailPublicKey: "your_emailjs_public_key",
-};
