@@ -1,8 +1,21 @@
 // Portfolio Constants - Update your information here
 // This centralized file makes it easy to maintain your portfolio content
 
+// Intro Screen Configuration
+export const INTRO_CONFIG = {
+  greeting: "Hi there,",
+  introduction: [
+    "I'm a Full Stack Developer & Creative Technologist.",
+    "I build innovative solutions across web and mobile platforms.",
+    "Combining technical expertise with creative problem-solving.",
+  ],
+  tagline: "Where Code Meets Creativity",
+  skipText: "Press any key to continue...",
+  enableSkip: false, // Set to true to skip intro for returning visitors
+};
+
 export const PERSONAL_INFO = {
-  name: "Your Name",
+  name: "Yap Min Hen",
   title: "Full Stack Developer",
   email: "evanyap96@gmail.com",
   phone: "+60 (10) 232-2096",
@@ -12,8 +25,8 @@ export const PERSONAL_INFO = {
 };
 
 export const SOCIAL_LINKS = {
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourusername",
+  github: "https://github.com/Minhen96",
+  linkedin: "https://www.linkedin.com/in/min-hen-yap-96b061205/",
   instagram: "https://www.instagram.com/minhen_96?igsh=ODNveW1yZnVka2Y%3D&utm_source=qr",
   // portfolio: "https://yourwebsite.com",
   // Add more social links as needed

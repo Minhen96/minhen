@@ -4,28 +4,41 @@ A modern, responsive portfolio website built with React, TypeScript, Vite, and T
 
 ## Features
 
-- Responsive design that works on all devices
-- Modern UI with smooth animations
-- Easy content management through centralized constants
-- Fast performance with Vite
-- Type-safe with TypeScript
-- Styled with Tailwind CSS
+- **Game-like 3D Intro Screen** - Interactive CSS-based 3D character with typing animation
+- **Dual Experience** - First-time visitors see intro, returning visitors skip to portfolio
+- **Custom Color Palette** - Professional design inspired by design_colouring.png reference
+- **Responsive design** that works on all devices
+- **Modern UI** with smooth animations and micro-interactions
+- **Easy content management** through centralized constants
+- **Fast performance** with Vite
+- **Type-safe** with TypeScript
+- **Styled** with Tailwind CSS custom theme
 
 ## Project Structure
 
 ```
 project/
 ├── src/
-│   ├── components/       # Reusable React components
-│   ├── constants/        # Centralized data and configuration
-│   │   └── portfolio.ts  # Main constants file - UPDATE THIS FILE
-│   ├── context/          # React context providers
-│   ├── App.tsx          # Main application component
-│   ├── main.tsx         # Application entry point
-│   └── index.css        # Global styles
-├── public/              # Static assets
-├── index.html          # HTML template
-└── package.json        # Project dependencies
+│   ├── components/           # Reusable React components
+│   │   ├── IntroScreen.tsx  # Game-like intro with typing animation
+│   │   ├── Scene3DFallback.tsx # CSS-based 3D character
+│   │   ├── Hero.tsx         # Hero section
+│   │   └── ...              # Other components
+│   ├── constants/            # Centralized data and configuration
+│   │   └── portfolio.ts      # Main constants file - UPDATE THIS FILE
+│   ├── context/              # React context providers
+│   ├── hooks/                # Custom React hooks
+│   │   └── useIntroComplete.ts # Intro state management
+│   ├── App.tsx              # Main application component
+│   ├── main.tsx             # Application entry point
+│   └── index.css            # Global styles
+├── reference/                # Design inspiration images
+│   ├── design_colouring.png
+│   └── game_style.png
+├── public/                  # Static assets
+├── tailwind.config.js       # Custom color palette
+├── index.html              # HTML template
+└── package.json            # Project dependencies
 ```
 
 ## Getting Started
@@ -58,6 +71,27 @@ npm run dev
 ## Updating Your Portfolio Content
 
 All your portfolio content is centralized in `src/constants/portfolio.ts`. Simply update this file to modify:
+
+### Intro Screen Configuration
+Customize the game-like intro experience:
+```typescript
+export const INTRO_CONFIG = {
+  greeting: "Hi there,",
+  introduction: [
+    "Line 1 of your introduction",
+    "Line 2 of your introduction",
+    "Line 3 of your introduction",
+  ],
+  tagline: "Your tagline here",
+  skipText: "Press any key to continue...",
+  enableSkip: true, // Set to false to show intro every time
+}
+```
+
+**How it works:**
+- First-time visitors see the full intro animation
+- Returning visitors automatically skip to the portfolio (if `enableSkip: true`)
+- To reset: Clear browser localStorage or set `enableSkip: false`
 
 ### Personal Information
 ```typescript
