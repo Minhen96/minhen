@@ -36,7 +36,7 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
     const nameTimer = setTimeout(() => setShowName(true), 1200);
     const roleTimer = setTimeout(() => setShowRole(true), 1200);
     const accentsTimer = setTimeout(() => setShowAccents(true), 0);
-    const clickHintTimer = setTimeout(() => setShowClickHint(true), 3500);
+    const clickHintTimer = setTimeout(() => setShowClickHint(true), 2800);
 
     return () => {
       clearTimeout(logoTimer);
@@ -192,7 +192,7 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
           {/* Skip hint */}
           <div className="pt-8">
             <motion.p
-              className="text-xs md:text-sm text-gray-500 font-mono"
+              className="text-xs md:text-sm text-gray-700 font-mono"
               initial={{ opacity: 0 }}
               animate={{
                 opacity: showClickHint ? [0.6, 1, 0.6] : 0,
