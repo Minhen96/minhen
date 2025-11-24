@@ -176,7 +176,8 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
             }`}
           >
             <p className="text-xl md:text-2xl lg:text-3xl font-light text-white/70 tracking-wide">
-              {PERSONAL_INFO.title}
+              /* {PERSONAL_INFO.title} */
+              Welcome to my portfolio.
             </p>
           </div>
 
@@ -192,7 +193,7 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
           {/* Skip hint */}
           <div className="pt-8">
             <motion.p
-              className="text-xs md:text-sm text-gray-700 font-mono"
+              className="text-xs md:text-sm text-gray-300 font-mono"
               initial={{ opacity: 0 }}
               animate={{
                 opacity: showClickHint ? [0.6, 1, 0.6] : 0,
