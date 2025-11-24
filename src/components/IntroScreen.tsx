@@ -36,7 +36,7 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
     const nameTimer = setTimeout(() => setShowName(true), 1200);
     const roleTimer = setTimeout(() => setShowRole(true), 1200);
     const accentsTimer = setTimeout(() => setShowAccents(true), 0);
-    const clickHintTimer = setTimeout(() => setShowClickHint(true), 2800);
+    const clickHintTimer = setTimeout(() => setShowClickHint(true), 3000);
 
     return () => {
       clearTimeout(logoTimer);
@@ -176,7 +176,7 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
             }`}
           >
             <p className="text-xl md:text-2xl lg:text-3xl font-light text-white/70 tracking-wide">
-              /* {PERSONAL_INFO.title} */
+              {/* {PERSONAL_INFO.title} */}
               Welcome to my portfolio.
             </p>
           </div>
@@ -196,7 +196,7 @@ export default function IntroScreen({ onComplete }: IntroScreenProps) {
               className="text-xs md:text-sm text-gray-300 font-mono"
               initial={{ opacity: 0 }}
               animate={{
-                opacity: showClickHint ? [0.6, 1, 0.6] : 0,
+                opacity: showClickHint ? [0.4, 1, 0.4] : 0,
                 scale: showClickHint ? [0.98, 1.02, 0.98] : 1
               }}
               transition={{
